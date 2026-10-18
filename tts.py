@@ -10,6 +10,9 @@ ROOT = pathlib.Path(__file__).parent
 WORK = pathlib.Path(os.environ.get("WORK", ROOT / "eps" / "example")).resolve()   # папка ролика: build/ audio/ frames/
 VOICES = {  # голос: (модель edge-tts, темп, высота). Список моделей: edge-tts --list-voices | grep ru-RU
     "narr": ("ru-RU-DmitryNeural", "+22%", "-6Hz"),     # рассказчик
+    "pa": ("ru-RU-SvetlanaNeural", "+0%", "-4Hz"),      # громкая связь / объявление (фильтр — в mix.py ролика)
+    "tema": ("ru-RU-DmitryNeural", "+2%", "+28Hz"),     # парень из телефона
+    "boy": ("ru-RU-DmitryNeural", "+10%", "+48Hz"),     # мальчик отвечает издалека
     "kol": ("ru-RU-SvetlanaNeural", "+6%", "+18Hz"),    # «устройство» (колонка, автоответчик); обработка «маленький динамик» — в mix.py ролика
     "rec": ("ru-RU-SvetlanaNeural", "-12%", "-14Hz"),   # тихий голос из записи / шёпот
 }

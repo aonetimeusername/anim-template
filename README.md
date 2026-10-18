@@ -79,6 +79,7 @@ python build.py <имя> --no-render         # только озвучка и з
 python build.py <имя> --skip-tts --sheet  # лист кадров eps/<имя>/qa/sheet.jpg без полного рендера
 python build.py <имя> --skip-tts          # полный рендер без новой озвучки
 python scene_test.py bedroom '{}' --look night   # посмотреть одну сцену
+python stress_check.py --root eps/<имя> --listen  # ударения диктора на слух (нужно: pip install -r requirements-stress.txt)
 ```
 
 ## Звуки и музыка
