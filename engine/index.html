@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Mont";src:url("../fonts/Montserrat[wght].ttf");font-weight:100 900;}
+@font-face{font-family:"Plex";src:url("../fonts/IBMPlexMono-SemiBold.ttf");font-weight:600;}
+@font-face{font-family:"Hand";src:url("../fonts/Caveat[wght].ttf");font-weight:400 700;}
+html,body{margin:0;width:360px;height:640px;overflow:hidden;background:#000;}
+#root{position:absolute;inset:0;overflow:hidden;background:#050c1a;}
+#cam{position:absolute;inset:0;transform-origin:180px 320px;}
+#stage{position:absolute;left:0;top:0;width:360px;height:640px;}
+#ov{position:absolute;inset:0;pointer-events:none;}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);}
+#grain{position:absolute;inset:0;width:360px;height:640px;opacity:.045;mix-blend-mode:screen;}
+#fade{position:absolute;inset:0;background:#000;opacity:0;}
+#cap{position:absolute;left:14px;right:14px;top:392px;text-align:center;font-family:"Mont";font-weight:900;font-size:27px;line-height:30px;letter-spacing:-.3px;text-transform:uppercase;}
+#cap .w{display:inline-block;margin:0 3px;color:#7d8697;text-shadow:0 2px 0 rgba(0,0,0,.55),0 0 14px rgba(0,0,0,.6);}
+#cap .w.on{color:#fff;}
+#cap .w.on.y{color:#ffcf2e;}
+#cap .w.on.r{color:#ff3b3b;}
+/* бумажная плашка */
+.stk{position:absolute;background:#e8dcc2;color:#1a1d24;font-family:"Mont";font-weight:800;font-size:15px;letter-spacing:.4px;padding:6px 13px 5px;box-shadow:0 3px 8px rgba(0,0,0,.45);white-space:nowrap;text-transform:uppercase;}
+.stk .n{font-family:"Hand";font-weight:700;color:#c8262b;font-size:21px;margin-right:6px;text-transform:none;vertical-align:-1px;}
+.stk.hand{font-family:"Hand";font-weight:700;font-size:30px;text-transform:uppercase;letter-spacing:1px;padding:2px 16px 0;text-align:center;line-height:30px;}
+.stk.hand small{display:block;font-family:"Plex";font-size:7.5px;letter-spacing:1.4px;line-height:11px;color:#3b3f48;padding-bottom:4px;}
+/* чипы */
+.chip{position:absolute;font-family:"Mont";font-weight:800;font-size:10.5px;letter-spacing:.3px;padding:4px 9px;border-radius:20px;white-space:nowrap;text-transform:uppercase;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.45);}
+#root.look-mono,#root.look-night,#root.look-muted{background:#030303;}
+.look-mono #cap .w.on.y,.look-night #cap .w.on.y,.look-muted #cap .w.on.y{color:#fff;text-shadow:0 0 12px rgba(255,48,48,.65),0 2px 0 rgba(0,0,0,.55);}
+.look-mono #cap .w.on.r,.look-night #cap .w.on.r,.look-muted #cap .w.on.r{color:#ff3030;}
+.look-mono .stk,.look-night .stk,.look-muted .stk{background:#eeeeee;} .look-mono .stk .n,.look-night .stk .n,.look-muted .stk .n{color:#e02020;}
+.look-mono .chip.green,.look-night .chip.green,.look-muted .chip.green{background:#e9edf3;color:#141a24;} .look-mono .chip.dark,.look-night .chip.dark,.look-muted .chip.dark{background:#111;border-color:#444;}
+.you{position:absolute;font-family:"Plex";font-weight:600;font-size:10px;letter-spacing:1.6px;padding:3px 8px 2px;border:1px solid rgba(233,237,243,.85);color:#e9edf3;background:rgba(6,9,14,.55);white-space:nowrap;}
+.you::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:14px;background:rgba(233,237,243,.7);}
+.chip.red{background:#cf2b2b;} .chip.green{background:#1f9d57;} .chip.dark{background:#1b2638;border:1px solid #3a4a66;} .chip.white{background:#e9edf3;color:#141a24;}
+.mono{position:absolute;font-family:"Plex";font-weight:600;font-size:8.5px;letter-spacing:1.2px;color:#8f9bb0;white-space:nowrap;text-transform:uppercase;}
+.part{position:absolute;left:0;right:0;text-align:center;font-family:"Mont";font-weight:900;color:#fff;text-transform:uppercase;}
+.part i{display:block;font-family:"Hand";font-style:normal;font-weight:700;font-size:20px;color:#c9ced8;text-transform:none;}
+</style></head>
+<body>
+<div id="root">
+  <div id="cam"><svg id="stage" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  <canvas id="grain" width="360" height="640"></canvas>
+  <div id="vig"></div>
+  <div id="ov"></div>
+  <div id="cap"></div>
+  <div id="fade"></div>
+</div>
+<script src="lib.js"></script>
+<script src="scenes.js"></script>
+<!-- сцены из engine/scenes/*.js подключает render.py -->
+<script src="runtime.js"></script>
+</body></html>

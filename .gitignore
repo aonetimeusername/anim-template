@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.DS_Store
+qa/
+eps/*/audio/
+eps/*/frames/
+eps/*/out/
+eps/*/qa/
+eps/*/build/*
+!eps/*/build/script.json
+# свои звуки и музыку в репозиторий не кладём (лицензии); README в этих папках остаются
+sfx/*
+!sfx/README.md
+music/*
+!music/README.md
